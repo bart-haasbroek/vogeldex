@@ -1,221 +1,638 @@
-import { Bird } from '../types/Bird';
+import { Bird } from "../types/Bird";
 
 export const birds: Bird[] = [
   {
     id: 1,
-    name: "American Robin",
-    scientificName: "Turdus migratorius",
-    description: "A common songbird with a reddish-orange breast and gray-brown upperparts.",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/b/b8/Turdus-migratorius-002.jpg",
-    location: "Backyard Garden",
+    name: "Roodborst",
+    scientificName: "Erithacus rubecula",
+    captured: false,
+    heard: false,
+    seen: false,
+    description:
+      "Kleine zangvogel met een oranje borst en een melodieus gezang.",
+    imageUrl: "",
+    location: "Zeewolde",
     date: "2023-04-15",
     properties: [
       {
-        name: "Habitat",
-        value: "American Robins can be found in gardens, parks, yards, and woodland edges. They are common in suburban and urban areas with open grassy areas and trees.",
-        key: "habitat"
+        name: "Uiterlijk",
+        value: "Oranje borst, bruinige rug",
+        key: "appearance",
       },
       {
-        name: "Activity",
-        value: "They are most active during daylight hours, especially in early morning and evening. They are one of the first birds to sing at dawn.",
-        key: "activity"
+        name: "Welke tijd van het jaar?",
+        value: "Het hele jaar door",
+        key: "season",
       },
       {
-        name: "Trees",
-        value: "They nest in a variety of deciduous trees and shrubs, including maples, oaks, pines, and fruit trees. They prefer trees with horizontal branches.They nest in a variety of deciduous trees and shrubs, including maples, oaks, pines, and fruit trees. They prefer trees with horizontal branches.They nest in a variety of deciduous trees and shrubs, including maples, oaks, pines, and fruit trees. They prefer trees with horizontal branches.They nest in a variety of deciduous trees and shrubs, including maples, oaks, pines, and fruit trees. They prefer trees with horizontal branches.They nest in a variety of deciduous trees and shrubs, including maples, oaks, pines, and fruit trees. They prefer trees with horizontal branches.They nest in a variety of deciduous trees and shrubs, including maples, oaks, pines, and fruit trees. They prefer trees with horizontal branches.They nest in a variety of deciduous trees and shrubs, including maples, oaks, pines, and fruit trees. They prefer trees with horizontal branches.They nest in a variety of deciduous trees and shrubs, including maples, oaks, pines, and fruit trees. They prefer trees with horizontal branches.They nest in a variety of deciduous trees and shrubs, including maples, oaks, pines, and fruit trees. They prefer trees with horizontal branches.They nest in a variety of deciduous trees and shrubs, including maples, oaks, pines, and fruit trees. They prefer trees with horizontal branches.They nest in a variety of deciduous trees and shrubs, including maples, oaks, pines, and fruit trees. They prefer trees with horizontal branches.They nest in a variety of deciduous trees and shrubs, including maples, oaks, pines, and fruit trees. They prefer trees with horizontal branches.They nest in a variety of deciduous trees and shrubs, including maples, oaks, pines, and fruit trees. They prefer trees with horizontal branches.They nest in a variety of deciduous trees and shrubs, including maples, oaks, pines, and fruit trees. They prefer trees with horizontal branches.",
-        key: "trees"
+        name: "Wanneer actief?",
+        value: "Ochtend en schemering",
+        key: "activity",
       },
+      { name: "In welke bomen?", value: "Loofbomen, struiken", key: "trees" },
       {
-        name: "Diet",
-        value: "Their diet consists mainly of earthworms, insects, and berries. In spring they primarily eat protein-rich invertebrates, while in fall and winter they switch to fruits and berries.",
-        key: "diet"
-      }
+        name: "Waar te vinden?",
+        value: "Tuinen, bossen, parken",
+        key: "habitat",
+      },
+      { name: "Eten", value: "Insecten, bessen", key: "diet" },
+      { name: "Sociaal", value: "Territoriaal, solitair", key: "behavior" },
     ],
   },
   {
     id: 2,
-    name: "Blue Jay",
-    scientificName: "Cyanocitta cristata",
-    description: "A vibrant blue bird with white and black markings and a distinctive crest.",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Blue_jay_in_PP_%2830960%29.jpg",
-    location: "Oak Forest",
-    date: "2023-05-22",
+    name: "Merel",
+    scientificName: "Turdus merula",
+    captured: false,
+    heard: false,
+    seen: false,
+    description:
+      "Mannetjes zijn zwart met een gele snavel, vrouwtjes zijn bruin.",
+    imageUrl: "",
+    location: "Zeewolde",
+    date: "2023-04-15",
     properties: [
       {
-        name: "Habitat",
-        value: "Blue Jays prefer mixed woodland forests, especially those with oak trees. They also adapt well to suburban and urban parks with mature trees.",
-        key: "habitat"
+        name: "Uiterlijk",
+        value: "Zwart (mannetje), bruin (vrouwtje)",
+        key: "appearance",
       },
       {
-        name: "Activity",
-        value: "They are diurnal and most active during daylight hours. They are known to be very vocal in the morning hours.",
-        key: "activity"
+        name: "Welke tijd van het jaar?",
+        value: "Het hele jaar door",
+        key: "season",
       },
+      { name: "Wanneer actief?", value: "Ochtend en avond", key: "activity" },
+      { name: "In welke bomen?", value: "Loofbomen, tuinen", key: "trees" },
       {
-        name: "Trees",
-        value: "They have a strong preference for oak trees due to their acorn production. They also use beech, hickory, and maple trees for nesting and foraging.",
-        key: "trees"
+        name: "Waar te vinden?",
+        value: "Tuinen, parken, bossen",
+        key: "habitat",
       },
-      {
-        name: "Diet",
-        value: "Blue Jays are omnivorous, eating nuts (especially acorns), seeds, berries, insects, and occasionally small vertebrates. They are known to cache food for later use.",
-        key: "diet"
-      }
+      { name: "Eten", value: "Wormen, bessen", key: "diet" },
+      { name: "Sociaal", value: "Solitair of in paartjes", key: "behavior" },
     ],
   },
   {
     id: 3,
-    name: "Northern Cardinal",
-    scientificName: "Cardinalis cardinalis",
-    description: "A brilliant red bird with a black face mask and a prominent crest.",
+    name: "Huismus",
+    scientificName: "Passer domesticus",
+    captured: false,
+    heard: false,
+    seen: false,
+    description:
+      "Kleine bruinige vogel, vaak te vinden bij mensen in steden en dorpen.",
     imageUrl: "",
-    location: "Pine Woods",
-    date: "2023-06-10",
+    location: "Zeewolde",
+    date: "2023-04-15",
     properties: [
       {
-        name: "Habitat",
-        value: "Northern Cardinals inhabit woodland edges, thickets, gardens, shrubby areas, and suburban yards. They prefer areas with dense shrubs for nesting.",
-        key: "habitat"
+        name: "Uiterlijk",
+        value: "Bruin met zwarte strepen, grijze kop",
+        key: "appearance",
       },
       {
-        name: "Activity",
-        value: "They are active throughout the day but most vocal during early morning. They are non-migratory and remain in their territories year-round.",
-        key: "activity"
+        name: "Welke tijd van het jaar?",
+        value: "Het hele jaar door",
+        key: "season",
+      },
+      { name: "Wanneer actief?", value: "Overdag", key: "activity" },
+      {
+        name: "In welke bomen?",
+        value: "Daken, struiken, bomen",
+        key: "trees",
       },
       {
-        name: "Trees",
-        value: "They nest in dense shrubs and small trees rather than tall forest trees. Common nesting sites include dogwood, hawthorn, grape tangles, and ornamental shrubs.",
-        key: "trees"
+        name: "Waar te vinden?",
+        value: "Steden, dorpen, boerderijen",
+        key: "habitat",
       },
-      {
-        name: "Diet",
-        value: "Their diet consists of seeds, fruits, and insects. They particularly favor sunflower seeds, safflower seeds, and various berries.",
-        key: "diet"
-      }
-    ]
+      { name: "Eten", value: "Zaden, kruimels, insecten", key: "diet" },
+      { name: "Sociaal", value: "Leeft in groepen", key: "behavior" },
+    ],
   },
   {
     id: 4,
-    name: "Barn Swallow",
-    scientificName: "Hirundo rustica",
-    description: "A sleek, agile bird with a deeply forked tail and blue-black upperparts.",
+    name: "Boomklever",
+    scientificName: "Sitta europaea",
+    captured: false,
+    heard: false,
+    seen: false,
+    description:
+      "Behendige klimmer die zowel omhoog als omlaag over boomstammen kan bewegen.",
     imageUrl: "",
-    location: "Old Barn",
-    date: "2023-07-05",
+    location: "Zeewolde",
+    date: "2023-04-15",
     properties: [
       {
-        name: "Habitat",
-        value: "Barn Swallows are found in open habitats near water and human structures. They commonly nest in barns, stables, under bridges, and on building eaves.",
-        key: "habitat"
+        name: "Uiterlijk",
+        value: "Blauwgrijze rug, oranje buik, zwarte oogstreep",
+        key: "appearance",
       },
       {
-        name: "Activity",
-        value: "They are diurnal and most active during daylight hours. They spend much of their day in flight, catching insects on the wing.",
-        key: "activity"
+        name: "Welke tijd van het jaar?",
+        value: "Het hele jaar door",
+        key: "season",
       },
+      { name: "Wanneer actief?", value: "Overdag", key: "activity" },
       {
-        name: "Trees",
-        value: "Unlike many birds, Barn Swallows rarely use trees for nesting. They prefer man-made structures with horizontal beams or ledges for nest attachment.",
-        key: "trees"
+        name: "In welke bomen?",
+        value: "Loofbomen zoals eiken en beuken",
+        key: "trees",
       },
-      {
-        name: "Diet",
-        value: "They feed almost exclusively on flying insects caught in mid-air, including flies, beetles, moths, and flying ants.",
-        key: "diet"
-      }
-    ]
+      { name: "Waar te vinden?", value: "Oude bossen, parken", key: "habitat" },
+      { name: "Eten", value: "Insecten, zaden, noten", key: "diet" },
+      { name: "Sociaal", value: "Solitair of in paartjes", key: "behavior" },
+    ],
   },
   {
     id: 5,
-    name: "Great Blue Heron",
-    scientificName: "Ardea herodias",
-    description: "A large wading bird with blue-gray plumage and a long, pointed bill.",
+    name: "Spreeuw",
+    scientificName: "Sturnus vulgaris",
+    captured: false,
+    heard: false,
+    seen: false,
+    description:
+      "Een sociale vogel die vaak in grote groepen voorkomt, bekend om zijn glanzende veren en acrobatische vliegkunst.",
     imageUrl: "",
-    location: "Lakeside",
-    date: "2023-08-18",
+    location: "Zeewolde",
+    date: "2023-04-12",
     properties: [
       {
-        name: "Habitat",
-        value: "Great Blue Herons inhabit both freshwater and saltwater habitats, including marshes, ponds, lakes, rivers, and coastal areas with shallow water for wading.",
-        key: "habitat"
+        name: "Uiterlijk",
+        value: "Glanzend zwart met groene en paarse reflecties",
+        key: "appearance",
       },
       {
-        name: "Activity",
-        value: "They are most active during dawn and dusk (crepuscular), but can be seen hunting throughout the day. They roost in trees at night.",
-        key: "activity"
+        name: "Welke tijd van het jaar?",
+        value: "Het hele jaar door",
+        key: "season",
       },
+      { name: "Wanneer actief?", value: "Overdag", key: "activity" },
+      { name: "In welke bomen?", value: "Bomen en struiken", key: "trees" },
       {
-        name: "Trees",
-        value: "For nesting, they prefer tall trees near water, often forming colonies called heronries. They commonly use sycamores, pines, and other large trees that provide good visibility.",
-        key: "trees"
+        name: "Waar te vinden?",
+        value: "Steden, dorpen, open velden",
+        key: "habitat",
       },
+      { name: "Eten", value: "Insecten, fruit, zaden", key: "diet" },
       {
-        name: "Diet",
-        value: "Their diet primarily consists of fish, but they also eat amphibians, reptiles, small mammals, insects, and other birds. They hunt by standing still in shallow water and striking quickly with their bill.",
-        key: "diet"
-      }
-    ]
+        name: "Sociaal",
+        value: "Groepsvogel, vaak in grote zwermen",
+        key: "behavior",
+      },
+    ],
   },
   {
     id: 6,
-    name: "Eastern Bluebird",
-    scientificName: "Sialia sialis",
-    description: "A small thrush with bright blue upperparts and a rusty throat and breast.",
+    name: "Winterkoning",
+    scientificName: "Troglodytes troglodytes",
+    captured: false,
+    heard: false,
+    seen: false,
+    description:
+      "Een kleine vogel met een grote zangstem, vaak gehoord in de winter, maar moeilijk te zien vanwege zijn schuwe gedrag.",
     imageUrl: "",
-    location: "Meadow",
-    date: "2023-09-02",
+    location: "Zeewolde",
+    date: "2023-04-14",
     properties: [
       {
-        name: "Habitat",
-        value: "Eastern Bluebirds prefer open country with scattered trees, meadows, farmland, orchards, and suburban parks with open grassy areas.",
-        key: "habitat"
+        name: "Uiterlijk",
+        value: "Klein, bruin, met een rechtopstaand staartje",
+        key: "appearance",
       },
       {
-        name: "Activity",
-        value: "They are diurnal birds, active throughout daylight hours. They are most vocal during the breeding season in spring.",
-        key: "activity"
+        name: "Welke tijd van het jaar?",
+        value: "Het hele jaar door, maar vooral in de winter",
+        key: "season",
+      },
+      { name: "Wanneer actief?", value: "Overdag", key: "activity" },
+      {
+        name: "In welke bomen?",
+        value: "Heesters, laag struikgewas",
+        key: "trees",
       },
       {
-        name: "Trees",
-        value: "They nest in natural tree cavities or nest boxes, preferring those in open areas with sparse ground cover. They don't excavate their own cavities but use existing ones.",
-        key: "trees"
+        name: "Waar te vinden?",
+        value: "Bosranden, tuinen, parken",
+        key: "habitat",
       },
+      { name: "Eten", value: "Insecten, spinnen, bessen", key: "diet" },
       {
-        name: "Diet",
-        value: "Their diet consists mainly of insects during summer (beetles, caterpillars, grasshoppers) and small fruits and berries during winter.",
-        key: "diet"
-      }
-    ]
+        name: "Sociaal",
+        value: "Solitair, soms in kleine groepen",
+        key: "behavior",
+      },
+    ],
   },
   {
     id: 7,
-    name: "Spotted Towhee",
-    scientificName: "Pipilo maculatus",
-    description: "A large sparrow with black upperparts, white spots, and rusty sides.",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/c/c6/Spotted_Towhee.jpg",
-    location: "Brushy Hillside",
-    date: "2023-10-15",
+    name: "Koolmees",
+    scientificName: "Parus major",
+    captured: false,
+    heard: false,
+    seen: false,
+    description:
+      "Een typische vogel van tuinen en bossen, bekend om zijn zwarte kop en gele buik.",
+    imageUrl: "",
+    location: "Zeewolde",
+    date: "2023-04-16",
     properties: [
       {
-        name: "Habitat",
-        value: "Spotted Towhees inhabit thickets, brushy areas, chaparral, woodland edges, and overgrown fields with dense undergrowth.",
-        key: "habitat"
+        name: "Uiterlijk",
+        value: "Zwarte kop, witte wangen, gele buik",
+        key: "appearance",
       },
       {
-        name: "Activity",
+        name: "Welke tijd van het jaar?",
+        value: "Het hele jaar door",
+        key: "season",
+      },
+      { name: "Wanneer actief?", value: "Overdag", key: "activity" },
+      {
+        name: "In welke bomen?",
+        value: "Loofbomen en coniferen",
+        key: "trees",
+      },
+      {
+        name: "Waar te vinden?",
+        value: "Tuin, bosranden, parken",
+        key: "habitat",
+      },
+      { name: "Eten", value: "Zaden, insecten, bessen", key: "diet" },
+      {
+        name: "Sociaal",
+        value: "Solitair of in kleine groepen",
+        key: "behavior",
+      },
+    ],
+  },
+  {
+    id: 8,
+    name: "Scholekster",
+    scientificName: "Haematopus ostralegus",
+    captured: false,
+    heard: false,
+    seen: false,
+    description:
+      "Een zwart-witte vogel met een lange oranje snavel, vaak te vinden langs de kust of op schorren.",
+    imageUrl: "",
+    location: "Zeewolde",
+    date: "2023-04-18",
+    properties: [
+      {
+        name: "Uiterlijk",
+        value: "Zwart-wit, oranje snavel",
+        key: "appearance",
+      },
+      {
+        name: "Welke tijd van het jaar?",
+        value: "Vooral in de lente en zomer",
+        key: "season",
+      },
+      { name: "Wanneer actief?", value: "Overdag", key: "activity" },
+      {
+        name: "In welke bomen?",
+        value: "Niet in bomen, vooral op de grond",
+        key: "trees",
+      },
+      {
+        name: "Waar te vinden?",
+        value: "Kustgebieden, schorren, modderbanken",
+        key: "habitat",
+      },
+      { name: "Eten", value: "Schelpdieren, wormen, insecten", key: "diet" },
+      {
+        name: "Sociaal",
+        value: "In kolonies, vaak in groepen",
+        key: "behavior",
+      },
+    ],
+  },
+  {
+    id: 9,
+    name: "Pimpelmees",
+    scientificName: "Cyanistes caeruleus",
+    captured: false,
+    heard: false,
+    seen: false,
+    description:
+      "Een kleine vogel met een blauw petje en een gele buik, veel voorkomend in tuinen en bossen.",
+    imageUrl: "",
+    location: "Zeewolde",
+    date: "2023-04-20",
+    properties: [
+      {
+        name: "Uiterlijk",
+        value: "Blauw petje, gele buik, witte wangen",
+        key: "appearance",
+      },
+      {
+        name: "Welke tijd van het jaar?",
+        value: "Het hele jaar door",
+        key: "season",
+      },
+      { name: "Wanneer actief?", value: "Overdag", key: "activity" },
+      { name: "In welke bomen?", value: "Loofbomen, coniferen", key: "trees" },
+      {
+        name: "Waar te vinden?",
+        value: "Tuin, bossen, parken",
+        key: "habitat",
+      },
+      { name: "Eten", value: "Zaden, insecten, bessen", key: "diet" },
+      {
+        name: "Sociaal",
+        value: "Solitair of in kleine groepen",
+        key: "behavior",
+      },
+    ],
+  },
+  {
+    id: 10,
+    name: "Appelvink",
+    scientificName: "Coccothraustes coccothraustes",
+    captured: false,
+    heard: false,
+    seen: false,
+    description:
+      "Een robuuste vogel met een grote snavel, bekend om zijn vermogen om harde pitten te kraken.",
+    imageUrl: "",
+    location: "Zeewolde",
+    date: "2023-04-22",
+    properties: [
+      {
+        name: "Uiterlijk",
+        value: "Grote snavel, bruin, grijs, met een oranje kop",
+        key: "appearance",
+      },
+      {
+        name: "Welke tijd van het jaar?",
+        value: "Herfst en winter",
+        key: "season",
+      },
+      { name: "Wanneer actief?", value: "Overdag", key: "activity" },
+      {
+        name: "In welke bomen?",
+        value: "Loofbomen, vooral eiken en beuken",
+        key: "trees",
+      },
+      {
+        name: "Waar te vinden?",
+        value: "Bosranden, tuinen, parken",
+        key: "habitat",
+      },
+      { name: "Eten", value: "Zaden, pitten, fruit", key: "diet" },
+      {
+        name: "Sociaal",
+        value: "Solitair of in kleine groepen",
+        key: "behavior",
+      },
+    ],
+  },
+
+  {
+    id: 11,
+    name: "Blauwe reiger",
+    scientificName: "Ardea cinerea",
+    captured: false,
+    heard: false,
+    seen: false,
+    description:
+      "Een grote, statige vogel die vaak langs oevers van meren en rivieren te vinden is.",
+    imageUrl: "",
+    location: "Zeewolde",
+    date: "2023-04-24",
+    properties: [
+      {
+        name: "Uiterlijk",
+        value: "Grijsblauw, lange nek, lange snavel",
+        key: "appearance",
+      },
+      {
+        name: "Welke tijd van het jaar?",
+        value: "Het hele jaar door",
+        key: "season",
+      },
+      {
+        name: "Wanneer actief?",
+        value: "Overdag, vooral bij zonsopgang en zonsondergang",
         key: "activity",
-        value: "They are most active during early morning and late afternoon. They spend much of their time foraging on the ground under cover."
       },
       {
-        name: "Trees",
-        value: "They prefer shrubby habitats rather than tall trees, nesting in dense shrubs, brush piles, or low branches of small trees.",
-        key: "trees"
+        name: "In welke bomen?",
+        value: "Niet in bomen, vooral langs water",
+        key: "trees",
       },
       {
-        name: "Diet",
-        value: "Their diet includes insects, seeds, berries, and small fruits. They forage by using both feet to scratch backward in leaf litter, uncovering hidden food.",
-        key: "diet"
-      }
-    ]
-  }
+        name: "Waar te vinden?",
+        value: "Meren, rivieren, moerassen",
+        key: "habitat",
+      },
+      { name: "Eten", value: "Vis, amfibieën, kleine zoogdieren", key: "diet" },
+      { name: "Sociaal", value: "Solitair", key: "behavior" },
+    ],
+  },
+  {
+    id: 12,
+    name: "Grote zilverreiger",
+    scientificName: "Ardea alba",
+    captured: false,
+    heard: false,
+    seen: false,
+    description:
+      "Een elegante, volledig witte reiger die vaak in ondiep water te vinden is, op zoek naar vis.",
+    imageUrl: "",
+    location: "Zeewolde",
+    date: "2023-04-26",
+    properties: [
+      {
+        name: "Uiterlijk",
+        value: "Volledig wit, lange nek en snavel",
+        key: "appearance",
+      },
+      {
+        name: "Welke tijd van het jaar?",
+        value: "Lente en zomer",
+        key: "season",
+      },
+      { name: "Wanneer actief?", value: "Overdag", key: "activity" },
+      {
+        name: "In welke bomen?",
+        value: "Niet in bomen, vooral langs water",
+        key: "trees",
+      },
+      {
+        name: "Waar te vinden?",
+        value: "Oevergebieden, moerassen",
+        key: "habitat",
+      },
+      { name: "Eten", value: "Vis, amfibieën", key: "diet" },
+      {
+        name: "Sociaal",
+        value: "Solitair of in kleine groepen",
+        key: "behavior",
+      },
+    ],
+  },
+  {
+    id: 13,
+    name: "Wielewaal",
+    scientificName: "Oriolus oriolus",
+    captured: false,
+    heard: false,
+    seen: false,
+    description:
+      "Een opvallende vogel met een felgele kleur en zwarte vleugels, bekend om zijn melodieuze zang.",
+    imageUrl: "",
+    location: "Zeewolde",
+    date: "2023-04-28",
+    properties: [
+      {
+        name: "Uiterlijk",
+        value: "Felgeel met zwarte vleugels en staart",
+        key: "appearance",
+      },
+      {
+        name: "Welke tijd van het jaar?",
+        value: "Lente en zomer",
+        key: "season",
+      },
+      { name: "Wanneer actief?", value: "Overdag", key: "activity" },
+      {
+        name: "In welke bomen?",
+        value: "Loofbomen, vooral wilgen en eiken",
+        key: "trees",
+      },
+      {
+        name: "Waar te vinden?",
+        value: "Bosranden, parkachtige gebieden",
+        key: "habitat",
+      },
+      { name: "Eten", value: "Insecten, fruit", key: "diet" },
+      {
+        name: "Sociaal",
+        value: "Solitair of in kleine groepen",
+        key: "behavior",
+      },
+    ],
+  },
+  {
+    id: 14,
+    name: "Buizerd",
+    scientificName: "Buteo buteo",
+    captured: false,
+    heard: false,
+    seen: false,
+    description:
+      "Een robuuste roofvogel, bekend om zijn karakteristieke, brede vleugels en ronde staart.",
+    imageUrl: "",
+    location: "Zeewolde",
+    date: "2023-05-01",
+    properties: [
+      {
+        name: "Uiterlijk",
+        value: "Bruin met lichte en donkere vlekken, ronde staart",
+        key: "appearance",
+      },
+      {
+        name: "Welke tijd van het jaar?",
+        value: "Het hele jaar door",
+        key: "season",
+      },
+      { name: "Wanneer actief?", value: "Overdag", key: "activity" },
+      {
+        name: "In welke bomen?",
+        value:
+          "Niet in bomen, maar vaak op hoge plekken zoals elektriciteitsmasten",
+        key: "trees",
+      },
+      {
+        name: "Waar te vinden?",
+        value: "Open velden, bossen, heuvels",
+        key: "habitat",
+      },
+      { name: "Eten", value: "Zoogdieren, vogels, reptielen", key: "diet" },
+      { name: "Sociaal", value: "Solitaire jager", key: "behavior" },
+    ],
+  },
+  {
+    id: 15,
+    name: "Vink",
+    scientificName: "Fringilla coelebs",
+    captured: false,
+    heard: false,
+    seen: false,
+    description:
+      "Een kleurrijke zangvogel met een roestrode borst en een krachtige zang, veel voorkomend in tuinen en bossen.",
+    imageUrl: "",
+    location: "Zeewolde",
+    date: "2023-05-03",
+    properties: [
+      {
+        name: "Uiterlijk",
+        value: "Roestrode borst, grijze rug, witte buik",
+        key: "appearance",
+      },
+      {
+        name: "Welke tijd van het jaar?",
+        value: "Het hele jaar door",
+        key: "season",
+      },
+      { name: "Wanneer actief?", value: "Overdag", key: "activity" },
+      {
+        name: "In welke bomen?",
+        value: "Loofbomen zoals beuken en eiken",
+        key: "trees",
+      },
+      {
+        name: "Waar te vinden?",
+        value: "Tuin, parken, bossen",
+        key: "habitat",
+      },
+      { name: "Eten", value: "Zaden, insecten", key: "diet" },
+      {
+        name: "Sociaal",
+        value: "Solitair of in kleine groepen",
+        key: "behavior",
+      },
+    ],
+  },
+  {
+    id: 16,
+    name: "Ijsvogel",
+    scientificName: "Alcedo atthis",
+    captured: false,
+    heard: false,
+    seen: false,
+    description:
+      "Een kleurrijke vogel die bekend staat om zijn felblauwe veren en jachttechniek waarbij hij zich op vis stort.",
+    imageUrl: "",
+    location: "Zeewolde",
+    date: "2023-05-05",
+    properties: [
+      {
+        name: "Uiterlijk",
+        value: "Felblauw met oranje buik, scherpe snavel",
+        key: "appearance",
+      },
+      {
+        name: "Welke tijd van het jaar?",
+        value: "Het hele jaar door",
+        key: "season",
+      },
+      { name: "Wanneer actief?", value: "Overdag", key: "activity" },
+      {
+        name: "In welke bomen?",
+        value: "Niet in bomen, maar langs wateren op takken of rotsen",
+        key: "trees",
+      },
+      {
+        name: "Waar te vinden?",
+        value: "Rivieren, meren, kanalen",
+        key: "habitat",
+      },
+      { name: "Eten", value: "Vis, insecten", key: "diet" },
+      { name: "Sociaal", value: "Solitair", key: "behavior" },
+    ],
+  },
 ];

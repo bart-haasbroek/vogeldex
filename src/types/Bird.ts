@@ -4,6 +4,9 @@ export interface Bird {
   scientificName: string;
   description: string;
   imageUrl: string;
+  captured: boolean;
+  heard: boolean;
+  seen: boolean;
   location: string;
   date: string;
   properties: {
