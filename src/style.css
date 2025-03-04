@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+#app {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.bird-card {
+  @apply bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105;
+}
+
+.pokedex-container {
+  @apply bg-pokedex-red rounded-lg p-4 shadow-xl border-4 border-pokedex-dark-red;
+}
+
+.pokedex-screen {
+  @apply bg-white rounded-lg p-2 border-2 border-gray-300;
+}
+
+.pokedex-button {
+  @apply bg-pokedex-blue hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full shadow-md;
+}
+
+/* Page transition animations */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
