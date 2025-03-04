@@ -68,7 +68,7 @@ export const birds: Bird[] = [
     name: "Northern Cardinal",
     scientificName: "Cardinalis cardinalis",
     description: "A brilliant red bird with a black face mask and a prominent crest.",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/d/da/Cardinal.jpg",
+    imageUrl: "",
     location: "Pine Woods",
     date: "2023-06-10",
     properties: [
@@ -99,7 +99,7 @@ export const birds: Bird[] = [
     name: "Barn Swallow",
     scientificName: "Hirundo rustica",
     description: "A sleek, agile bird with a deeply forked tail and blue-black upperparts.",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/f/f8/Barn_Swallow_%28Hirundo_rustica%29_%2826383636221%29.jpg",
+    imageUrl: "",
     location: "Old Barn",
     date: "2023-07-05",
     properties: [
@@ -130,7 +130,7 @@ export const birds: Bird[] = [
     name: "Great Blue Heron",
     scientificName: "Ardea herodias",
     description: "A large wading bird with blue-gray plumage and a long, pointed bill.",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/6/67/GBHeron.jpg",
+    imageUrl: "",
     location: "Lakeside",
     date: "2023-08-18",
     properties: [
@@ -161,7 +161,7 @@ export const birds: Bird[] = [
     name: "Eastern Bluebird",
     scientificName: "Sialia sialis",
     description: "A small thrush with bright blue upperparts and a rusty throat and breast.",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/8/8d/Eastern_Bluebird.jpg",
+    imageUrl: "",
     location: "Meadow",
     date: "2023-09-02",
     properties: [

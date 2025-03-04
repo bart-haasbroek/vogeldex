@@ -9,7 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.4.38"
+    "@supabase/supabase-js": "^2.49.1",
+    "airtable": "^0.12.2",
+    "dotenv": "^16.4.7",
+    "vue": "^3.4.38",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.3",
