@@ -19,11 +19,17 @@ export const handler = async (event) => {
     }));
     return {
       statusCode: 200,
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({ records: data }),
     };
   } catch (error) {
     return {
       statusCode: 500,
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: `Error: ${error.message}`,
     };
   }

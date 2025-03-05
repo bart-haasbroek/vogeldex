@@ -1,23 +1,35 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
-import { birds } from '../data/birds';
+import { ref, computed, onMounted } from 'vue';
+import { useBirdStore } from '../../store/birdStore';
+// import { birds } from '../data/birds';
 import BirdCard from './BirdCard.vue';
+import { storeToRefs } from 'pinia';
+import { Bird } from '../types/Bird';
+
+const birdStore = useBirdStore();
+const { birds: birdList } = storeToRefs(birdStore);
 
 const searchQuery = ref('');
 
 const filteredBirds = computed(() => {
-  if (!searchQuery.value) return birds;
+  if (!searchQuery.value || !birdList.value) return birdList.value;
 
   const query = searchQuery.value.toLowerCase();
-  return birds.filter(bird =>
-    bird.name.toLowerCase().includes(query) ||
+  return birdList.value.filter((bird: Bird) =>
+    bird.title.toLowerCase().includes(query) ||
     bird.scientificName.toLowerCase().includes(query)
   );
+});
+
+
+
+onMounted(() => {
+  birdStore.getBirds();
 });
 </script>
 
 <template>
-  <div class="transition-opacity duration-300 ease-in-out">
+  <div v-if="birdList.length > 0" class="transition-opacity duration-300 ease-in-out">
     <div class="mb-3 sticky top-0 bg-slate-100 py-2 z-[90]">
       <input v-model="searchQuery" type="text" placeholder="Zoeken naar vogels..."
         class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pokedex-red focus:border-transparent" />

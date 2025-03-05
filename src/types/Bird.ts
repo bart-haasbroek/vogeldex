@@ -1,9 +1,9 @@
 export interface Bird {
-  id: number;
-  name: string;
+  id: string;
+  title: string;
   scientificName: string;
   description: string;
-  imageUrl: string;
+  image: string;
   captured: boolean;
   heard: boolean;
   seen: boolean;

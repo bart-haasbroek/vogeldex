@@ -389,7 +389,6 @@ export const birds: Bird[] = [
       },
     ],
   },
-
   {
     id: 11,
     name: "Blauwe reiger",

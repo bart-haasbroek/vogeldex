@@ -1,13 +1,16 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed, ComputedRef } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { Bird } from '../types/Bird';
-import { birds } from '../data/birds';
+import { useBirdStore } from '../../store/birdStore';
+import { storeToRefs } from 'pinia';
+
 
 const activeSection = ref<string | null>(null);
 const route = useRoute();
 const router = useRouter();
-const bird = ref<Bird | null>(null);
+const birdStore = useBirdStore();
+const { birds } = storeToRefs(birdStore);
 
 function toggleSection(section: string) {
   activeSection.value = activeSection.value === section ? null : section;
@@ -17,19 +20,46 @@ function isActive(section: string): boolean {
   return activeSection.value === section;
 }
 
-function fetchBirdById(id: string) {
-  const birdData = birds.find(b => b.id === parseInt(id));
-  if (birdData) {
-    bird.value = birdData; // Stel de gevonden vogel in
-  } else {
-    console.error(`Bird with ID ${id} not found.`);
-  }
-}
+const bird: ComputedRef<Bird | null> = computed(() => {
+  const birdId = route.params.id as string;
+  return birds.value.find(b => b.id === birdId);
+});
 
 onMounted(() => {
-  const birdId = route.params.id as string;
-  fetchBirdById(birdId);
+  birdStore.getBirds();
 });
+
+const selectedImage = ref(null);
+const uploadedImage = ref("");
+
+const handleFileUpload = (event: Event) => {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      selectedImage.value = reader.result.split(",")[1];
+      uploadImage();
+    };
+    reader.readAsDataURL(file);
+  }
+};
+
+const uploadImage = async () => {
+  if (!selectedImage.value || !bird.value) return;
+  try {
+    const response = await fetch("/.netlify/functions/upload", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ image: selectedImage.value, recordId: bird.value.id }),
+    });
+
+    const data = await response.json();
+    uploadedImage.value = data.url;
+    bird.value.image = data.url;
+  } catch (error) {
+    console.error("Upload mislukt:", error);
+  }
+};
 
 </script>
 
@@ -45,7 +75,7 @@ onMounted(() => {
     <div class="pokedex-container">
       <div class="flex justify-between items-center mb-4">
         <div>
-          <h2 class="text-xl font-bold text-slate-50">{{ bird.name }}</h2>
+          <h2 class="text-xl font-bold text-slate-50">{{ bird.title }}</h2>
           <p class="text-sm italic text-gray-900">{{ bird.scientificName }}</p>
         </div>
         <button @click="router.back()"
@@ -55,11 +85,12 @@ onMounted(() => {
       </div>
 
       <div class="pokedex-screen mb-4">
-        <div v-if="bird.imageUrl" class="relative">
-          <img :src="bird.imageUrl" :alt="bird.name" class="w-full h-64 object-cover rounded" />
+        <div v-if="bird.image" class="relative">
+          <img :src="bird.image" :alt="bird.title" class="w-full h-64 object-cover rounded" />
         </div>
         <div v-else class="w-full h-64 bg-gray-200 rounded flex items-center justify-center">
-          <button class="pokedex-button flex items-center">
+          <input type="file" id="fileInput" @change="handleFileUpload" accept="image/*" style="display: none;" />
+          <label for="fileInput" class="pokedex-button flex items-center cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -67,13 +98,12 @@ onMounted(() => {
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            Add Photo
-          </button>
+            Add foto
+          </label>
         </div>
       </div>
 
       <div class="pokedex-screen">
-
         <div class="grid grid-cols-2 gap-2 mb-3 text-sm">
           <div class="bg-gray-100 p-2 rounded">
             <span class="font-bold">Location:</span> {{ bird.location }}
