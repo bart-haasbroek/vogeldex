@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
-import { useBirdStore } from '../../store/birdStore';
-// import { birds } from '../data/birds';
 import BirdCard from './BirdCard.vue';
 import { storeToRefs } from 'pinia';
 import { Bird } from '../types/Bird';
+import { useBirdStore } from '../store/birdStore';
 
 const birdStore = useBirdStore();
 const { birds: birdList } = storeToRefs(birdStore);

@@ -2,7 +2,7 @@
 import { ref, onMounted, computed, ComputedRef } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { Bird } from '../types/Bird';
-import { useBirdStore } from '../../store/birdStore';
+import { useBirdStore } from '../store/birdStore';
 import { storeToRefs } from 'pinia';
 
 
@@ -22,22 +22,22 @@ function isActive(section: string): boolean {
 
 const bird: ComputedRef<Bird | null> = computed(() => {
   const birdId = route.params.id as string;
-  return birds.value.find(b => b.id === birdId);
+  return birds.value.find(b => b.id === birdId) || null;
 });
 
 onMounted(() => {
   birdStore.getBirds();
 });
 
-const selectedImage = ref(null);
+const selectedImage = ref<string | null>(null);
 const uploadedImage = ref("");
 
 const handleFileUpload = (event: Event) => {
-  const file = event.target.files[0];
+  const file = (event.target as HTMLInputElement).files?.[0];
   if (file) {
     const reader = new FileReader();
     reader.onloadend = () => {
-      selectedImage.value = reader.result.split(",")[1];
+      selectedImage.value = typeof reader.result === 'string' ? reader.result.split(",")[1] : null;
       uploadImage();
     };
     reader.readAsDataURL(file);

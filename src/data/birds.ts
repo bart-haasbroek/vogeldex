@@ -2,15 +2,15 @@ import { Bird } from "../types/Bird";
 
 export const birds: Bird[] = [
   {
-    id: 1,
-    name: "Roodborst",
+    id: "1",
+    title: "Roodborst",
     scientificName: "Erithacus rubecula",
     captured: false,
     heard: false,
     seen: false,
     description:
       "Kleine zangvogel met een oranje borst en een melodieus gezang.",
-    imageUrl: "",
+    image: "",
     location: "Zeewolde",
     date: "2023-04-15",
     properties: [
@@ -40,15 +40,15 @@ export const birds: Bird[] = [
     ],
   },
   {
-    id: 2,
-    name: "Merel",
+    id: "2",
+    title: "Merel",
     scientificName: "Turdus merula",
     captured: false,
     heard: false,
     seen: false,
     description:
       "Mannetjes zijn zwart met een gele snavel, vrouwtjes zijn bruin.",
-    imageUrl: "",
+    image: "",
     location: "Zeewolde",
     date: "2023-04-15",
     properties: [
@@ -74,15 +74,15 @@ export const birds: Bird[] = [
     ],
   },
   {
-    id: 3,
-    name: "Huismus",
+    id: "3",
+    title: "Huismus",
     scientificName: "Passer domesticus",
     captured: false,
     heard: false,
     seen: false,
     description:
       "Kleine bruinige vogel, vaak te vinden bij mensen in steden en dorpen.",
-    imageUrl: "",
+    image: "",
     location: "Zeewolde",
     date: "2023-04-15",
     properties: [
@@ -112,15 +112,15 @@ export const birds: Bird[] = [
     ],
   },
   {
-    id: 4,
-    name: "Boomklever",
+    id: "4",
+    title: "Boomklever",
     scientificName: "Sitta europaea",
     captured: false,
     heard: false,
     seen: false,
     description:
       "Behendige klimmer die zowel omhoog als omlaag over boomstammen kan bewegen.",
-    imageUrl: "",
+    image: "",
     location: "Zeewolde",
     date: "2023-04-15",
     properties: [
@@ -146,15 +146,15 @@ export const birds: Bird[] = [
     ],
   },
   {
-    id: 5,
-    name: "Spreeuw",
+    id: "5",
+    title: "Spreeuw",
     scientificName: "Sturnus vulgaris",
     captured: false,
     heard: false,
     seen: false,
     description:
       "Een sociale vogel die vaak in grote groepen voorkomt, bekend om zijn glanzende veren en acrobatische vliegkunst.",
-    imageUrl: "",
+    image: "",
     location: "Zeewolde",
     date: "2023-04-12",
     properties: [
@@ -184,15 +184,15 @@ export const birds: Bird[] = [
     ],
   },
   {
-    id: 6,
-    name: "Winterkoning",
+    id: "6",
+    title: "Winterkoning",
     scientificName: "Troglodytes troglodytes",
     captured: false,
     heard: false,
     seen: false,
     description:
       "Een kleine vogel met een grote zangstem, vaak gehoord in de winter, maar moeilijk te zien vanwege zijn schuwe gedrag.",
-    imageUrl: "",
+    image: "",
     location: "Zeewolde",
     date: "2023-04-14",
     properties: [
@@ -226,15 +226,15 @@ export const birds: Bird[] = [
     ],
   },
   {
-    id: 7,
-    name: "Koolmees",
+    id: "7",
+    title: "Koolmees",
     scientificName: "Parus major",
     captured: false,
     heard: false,
     seen: false,
     description:
       "Een typische vogel van tuinen en bossen, bekend om zijn zwarte kop en gele buik.",
-    imageUrl: "",
+    image: "",
     location: "Zeewolde",
     date: "2023-04-16",
     properties: [
@@ -268,15 +268,15 @@ export const birds: Bird[] = [
     ],
   },
   {
-    id: 8,
-    name: "Scholekster",
+    id: "8",
+    title: "Scholekster",
     scientificName: "Haematopus ostralegus",
     captured: false,
     heard: false,
     seen: false,
     description:
       "Een zwart-witte vogel met een lange oranje snavel, vaak te vinden langs de kust of op schorren.",
-    imageUrl: "",
+    image: "",
     location: "Zeewolde",
     date: "2023-04-18",
     properties: [
@@ -310,15 +310,15 @@ export const birds: Bird[] = [
     ],
   },
   {
-    id: 9,
-    name: "Pimpelmees",
+    id: "9",
+    title: "Pimpelmees",
     scientificName: "Cyanistes caeruleus",
     captured: false,
     heard: false,
     seen: false,
     description:
       "Een kleine vogel met een blauw petje en een gele buik, veel voorkomend in tuinen en bossen.",
-    imageUrl: "",
+    image: "",
     location: "Zeewolde",
     date: "2023-04-20",
     properties: [
@@ -348,15 +348,15 @@ export const birds: Bird[] = [
     ],
   },
   {
-    id: 10,
-    name: "Appelvink",
+    id: "10",
+    title: "Appelvink",
     scientificName: "Coccothraustes coccothraustes",
     captured: false,
     heard: false,
     seen: false,
     description:
       "Een robuuste vogel met een grote snavel, bekend om zijn vermogen om harde pitten te kraken.",
-    imageUrl: "",
+    image: "",
     location: "Zeewolde",
     date: "2023-04-22",
     properties: [
@@ -390,15 +390,15 @@ export const birds: Bird[] = [
     ],
   },
   {
-    id: 11,
-    name: "Blauwe reiger",
+    id: "11",
+    title: "Blauwe reiger",
     scientificName: "Ardea cinerea",
     captured: false,
     heard: false,
     seen: false,
     description:
       "Een grote, statige vogel die vaak langs oevers van meren en rivieren te vinden is.",
-    imageUrl: "",
+    image: "",
     location: "Zeewolde",
     date: "2023-04-24",
     properties: [
@@ -432,15 +432,15 @@ export const birds: Bird[] = [
     ],
   },
   {
-    id: 12,
-    name: "Grote zilverreiger",
+    id: "12",
+    title: "Grote zilverreiger",
     scientificName: "Ardea alba",
     captured: false,
     heard: false,
     seen: false,
     description:
       "Een elegante, volledig witte reiger die vaak in ondiep water te vinden is, op zoek naar vis.",
-    imageUrl: "",
+    image: "",
     location: "Zeewolde",
     date: "2023-04-26",
     properties: [
@@ -474,15 +474,15 @@ export const birds: Bird[] = [
     ],
   },
   {
-    id: 13,
-    name: "Wielewaal",
+    id: "13",
+    title: "Wielewaal",
     scientificName: "Oriolus oriolus",
     captured: false,
     heard: false,
     seen: false,
     description:
       "Een opvallende vogel met een felgele kleur en zwarte vleugels, bekend om zijn melodieuze zang.",
-    imageUrl: "",
+    image: "",
     location: "Zeewolde",
     date: "2023-04-28",
     properties: [
@@ -516,15 +516,15 @@ export const birds: Bird[] = [
     ],
   },
   {
-    id: 14,
-    name: "Buizerd",
+    id: "14",
+    title: "Buizerd",
     scientificName: "Buteo buteo",
     captured: false,
     heard: false,
     seen: false,
     description:
       "Een robuuste roofvogel, bekend om zijn karakteristieke, brede vleugels en ronde staart.",
-    imageUrl: "",
+    image: "",
     location: "Zeewolde",
     date: "2023-05-01",
     properties: [
@@ -555,15 +555,15 @@ export const birds: Bird[] = [
     ],
   },
   {
-    id: 15,
-    name: "Vink",
+    id: "15",
+    title: "Vink",
     scientificName: "Fringilla coelebs",
     captured: false,
     heard: false,
     seen: false,
     description:
       "Een kleurrijke zangvogel met een roestrode borst en een krachtige zang, veel voorkomend in tuinen en bossen.",
-    imageUrl: "",
+    image: "",
     location: "Zeewolde",
     date: "2023-05-03",
     properties: [
@@ -597,15 +597,15 @@ export const birds: Bird[] = [
     ],
   },
   {
-    id: 16,
-    name: "Ijsvogel",
+    id: "16",
+    title: "Ijsvogel",
     scientificName: "Alcedo atthis",
     captured: false,
     heard: false,
     seen: false,
     description:
       "Een kleurrijke vogel die bekend staat om zijn felblauwe veren en jachttechniek waarbij hij zich op vis stort.",
-    imageUrl: "",
+    image: "",
     location: "Zeewolde",
     date: "2023-05-05",
     properties: [

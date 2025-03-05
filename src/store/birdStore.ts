@@ -1,9 +1,9 @@
     import { defineStore } from 'pinia';
-
+    import { Bird } from '../types/Bird';
 
    export const useBirdStore = defineStore('bird', {
      state: () => ({
-       birds: [],
+       birds: [] as Bird[],
      }),
      actions: {
        async getBirds() {
@@ -26,7 +26,7 @@
           });
           this.birds = list;
        },
-       addBird(bird) {
+       addBird(bird: Bird) {
          this.birds.push(bird)
        },
     },
