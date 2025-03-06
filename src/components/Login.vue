@@ -1,13 +1,18 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useAuthtore } from '../store/authStore'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const email = ref('')
 const password = ref('')
 
-const handleSubmit = () => {
-    // TODO: Implementeer login logica
-    console.log('email', email.value, 'password', password.value)
-    console.log('Login poging:', { email: email.value, password: password.value })
+const authStore = useAuthtore()
+
+async function handleSubmit() {
+    await authStore.login(email.value, password.value);
+    router.push('/')
 }
 </script>
 
@@ -31,7 +36,7 @@ const handleSubmit = () => {
                 <div class="rounded-md shadow-sm space-y-4">
                     <div>
                         <label for="email" class="sr-only">E-mailadres</label>
-                        <input v-model="email" id="email" name="email" type="email" required
+                        <input v-model="email" id="email" name="email" type="text" required
                             class="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-pokedex-red focus:border-transparent"
                             placeholder="E-mailadres" />
                     </div>

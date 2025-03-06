@@ -34,7 +34,7 @@ onMounted(() => {
         class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pokedex-red focus:border-transparent" />
     </div>
 
-    <div class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-6 mb-8">
+    <div class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8">
       <router-link v-for="bird in filteredBirds" :key="bird.id" :to="{ name: 'bird', params: { id: bird.id } }">
         <BirdCard :bird="bird" />
       </router-link>
