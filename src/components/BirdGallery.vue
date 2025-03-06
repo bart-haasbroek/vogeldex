@@ -15,12 +15,11 @@ const filteredBirds = computed(() => {
 
   const query = searchQuery.value.toLowerCase();
   return birdList.value.filter((bird: Bird) =>
+    bird.title &&
     bird.title.toLowerCase().includes(query) ||
     bird.scientificName.toLowerCase().includes(query)
   );
 });
-
-
 
 onMounted(() => {
   birdStore.getBirds();

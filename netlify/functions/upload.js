@@ -21,6 +21,7 @@ export const handler = async (event) => {
     const imageBuffer = Buffer.from(body.image, "base64");
 
     const compressedImage = await sharp(imageBuffer)
+      .rotate()
       .resize(900) // Max breedte 800px
       .jpeg({ quality: 80 }) // Compressie: 80%
       .toBuffer();
