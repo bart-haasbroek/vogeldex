@@ -3,7 +3,7 @@
 
 <template>
   <div class="min-h-screen bg-gray-100">
-    <div class="p-3 md:p-4 max-w-[968px] mx-auto">
+    <div class="p-3 md:p-4 max-w-[800px] mx-auto">
       <h1 class="text-3xl font-bold text-center text-pokedex-red mt-2">Vogeldex</h1>
 
       <router-view />
