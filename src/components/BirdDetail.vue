@@ -60,7 +60,7 @@ onMounted(() => {
         <div v-if="bird.image" class="relative">
           <img :src="bird.image" :alt="bird.title" class="w-full h-64 object-cover rounded" />
         </div>
-        <div v-if="isLoggedIn" class="w-full h-64 bg-gray-200 rounded flex items-center justify-center">
+        <div v-if="isLoggedIn && !bird.image" class="w-full h-64 bg-gray-200 rounded flex items-center justify-center">
           <input type="file" id="fileInput" @change="uploadImage($event, bird)" accept="image/*" style="display: none;" />
           <label for="fileInput" class="pokedex-button flex items-center cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
