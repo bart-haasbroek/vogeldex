@@ -5,11 +5,11 @@ import { Bird } from '../types/Bird';
 import { useBirdStore } from '../store/birdStore';
 import { storeToRefs } from 'pinia';
 
-
 const activeSection = ref<string | null>(null);
 const route = useRoute();
 const router = useRouter();
 const birdStore = useBirdStore();
+const { uploadImage } = birdStore;
 const { birds } = storeToRefs(birdStore);
 
 function toggleSection(section: string) {
@@ -28,39 +28,6 @@ const bird: ComputedRef<Bird | null> = computed(() => {
 onMounted(() => {
   birdStore.getBirds();
 });
-
-const selectedImage = ref<string | null>(null);
-const uploadedImage = ref("");
-
-const handleFileUpload = (event: Event) => {
-  const file = (event.target as HTMLInputElement).files?.[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      selectedImage.value = typeof reader.result === 'string' ? reader.result.split(",")[1] : null;
-      uploadImage();
-    };
-    reader.readAsDataURL(file);
-  }
-};
-
-const uploadImage = async () => {
-  if (!selectedImage.value || !bird.value) return;
-  try {
-    const response = await fetch("/.netlify/functions/upload", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ image: selectedImage.value, recordId: bird.value.id }),
-    });
-
-    const data = await response.json();
-    uploadedImage.value = data.url;
-    bird.value.image = data.url;
-  } catch (error) {
-    console.error("Upload mislukt:", error);
-  }
-};
-
 </script>
 
 <template>
@@ -89,7 +56,7 @@ const uploadImage = async () => {
           <img :src="bird.image" :alt="bird.title" class="w-full h-64 object-cover rounded" />
         </div>
         <div v-else class="w-full h-64 bg-gray-200 rounded flex items-center justify-center">
-          <input type="file" id="fileInput" @change="handleFileUpload" accept="image/*" style="display: none;" />
+          <input type="file" id="fileInput" @change="uploadImage($event, bird)" accept="image/*" style="display: none;" />
           <label for="fileInput" class="pokedex-button flex items-center cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
@@ -98,7 +65,7 @@ const uploadImage = async () => {
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            Add foto
+            Voeg foto toe
           </label>
         </div>
       </div>

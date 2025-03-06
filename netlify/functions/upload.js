@@ -1,5 +1,4 @@
 import sharp from "sharp";
-import FormData from "form-data";
 import Airtable from 'airtable';
 
 export const handler = async (event) => {
@@ -25,18 +24,6 @@ export const handler = async (event) => {
       .resize(900) // Max breedte 800px
       .jpeg({ quality: 80 }) // Compressie: 80%
       .toBuffer();
-
-    const formData = new FormData();
-    // formData.append("image", compressedImage.toString("base64"));
-    // formData.append("key", process.env.IMGBB_API_KEY);
-
-    // const response = await axios.post(
-    //   "https://api.imgbb.com/1/upload",
-    //   formData,
-    //   {
-    //     headers: formData.getHeaders(),
-    //   }
-    // );
 
     const response = await fetch("https://api.imgbb.com/1/upload?key=" + process.env.IMGBB_API_KEY, {
         method: "POST",
